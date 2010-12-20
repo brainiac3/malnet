@@ -1,0 +1,35 @@
+1. What is MalNET?
+------------------
+MalNET is a python application to help assist in the diagnosis of machines infected with malware 
+in a corporate environment. MalNET is designed to be a low interaction web server which can be 
+used to communicate with malware attempting to download via http. When an infected host attempts 
+to download badfile.exe from a host which has been blackholed in DNS (more on this later..), the 
+MalNET application will ALWAYS return a "200 OK" response, essentially making the malware 
+downloader believe the malware is on the way. From an incident response perspective all you really 
+want is the URL of the file the malware is attempting to download, for which you can then download 
+yourself and unpack/analyse/scan etc for any follow up.
+
+2. Blackhole DNS
+------------------
+Many corporate environments and research organisations are now setting up DarkNETs, these are not 
+new. However for much more than the 'ooh, aah' factory and some research statistics, they are pretty 
+much useless. Some environments running DarkNETs are now starting to redirect blackhole'd DNS 
+traffic into their DarkNET, essentially polluting their DarkNET environment. The MalNET application 
+is designed to be used in conjunction with something like the malwaredomains.com blackhole'd DNS list, 
+redirecting all of your blackholed DNS traffic to the host running MalNET.
+
+3. Usage
+------------------
+Not much to it really;
+
+sudo python ./malnet.py <port>
+
+<port> defaults to port 80 if none specified
+
+4. About
+------------------
+This application is in the very early stages and is a way for me to learn more about python. Since 
+I have a strong interest in python+malware/incident response/ids etc, this should be pretty fun. Bugs, 
+comments etc to brainiac3@evilnerds.net
+
+peace out!
