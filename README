@@ -18,6 +18,14 @@ traffic into their DarkNET, essentially polluting their DarkNET environment. The
 is designed to be used in conjunction with something like the malwaredomains.com blackholed DNS list, 
 redirecting all of your blackholed DNS traffic to the host running MalNET.
 
+The files located in the dnsbh folder in MalNET need to be copied onto your BIND server. Then:
+
+- Configure the WGET var to use your wget binary
+- Change the NAMEDB var to your namedb directory in bind (normally /etc/namedb or /var/named/something)
+
+Once this has been done, edit the blockeddomain.hosts hosts by adding in your nameserver address 
+and changing the last occurence of 127.0.0.1 replacing it with your host running malnet.py
+
 3. Usage
 ------------------
 Not much to it really;
