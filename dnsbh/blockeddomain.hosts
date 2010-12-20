@@ -1,0 +1,18 @@
+; This zone will kill all traffic to a listed domain
+; Replace xxxnameserver.net with your nameserver 
+; Replace the last occurence of 127.0.0.1 with the IP of your MalNET host
+;
+
+$TTL    86400   ; one day
+
+@       IN      SOA     ns1.xxxxnameserver.net. xxxxnameserver.net. (
+                          1
+                          28800   ; refresh  8 hours
+                          7200    ; retry    2 hours
+                          864000  ; expire  10 days
+                          86400 ) ; min ttl  1 day
+                  NS      ns1.xxxnameserver.net.
+
+                  A       127.0.0.1
+
+*               IN      A       127.0.0.1
