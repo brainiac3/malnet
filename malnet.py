@@ -3,16 +3,6 @@
 # MalNET v0.1
 # brainiac3 <brainiac3@evilnerds.net>
 #
-# MalNET serves as a low interaction http server for tracking malware via http requests in an 
-# environment. for this to work the domains hosting the malware need a dummy dns zone created 
-# redirecting them to your host running MalNET. once MalNET has been started, you will see log 
-# output to stderr and also created in the log file malnet.log. The log output will
-# look as follows:
-#
-# Started Malnet HTTP Server...
-# hostpc.domain.net [19/Dec/2010 11:34:21] Host: ['some.malwaredomain.com'] "GET / HTTP/1.1" 200 -
-# ^ visiting host   ^ date                         ^malware domain visited  ^ request
-#
 # Usage:
 # sudo python ./malnet.py <port>
 #

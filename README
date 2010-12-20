@@ -12,10 +12,10 @@ yourself and unpack/analyse/scan etc for any follow up.
 2. Blackhole DNS
 ------------------
 Many corporate environments and research organisations are now setting up DarkNETs, these are not 
-new. However for much more than the 'ooh, aah' factory and some research statistics, they are pretty 
-much useless. Some environments running DarkNETs are now starting to redirect blackhole'd DNS 
+new. However for much more than the 'ooh, aah' factor and some research statistics they are pretty 
+much useless. Some environments running DarkNETs are now starting to redirect blackholed DNS 
 traffic into their DarkNET, essentially polluting their DarkNET environment. The MalNET application 
-is designed to be used in conjunction with something like the malwaredomains.com blackhole'd DNS list, 
+is designed to be used in conjunction with something like the malwaredomains.com blackholed DNS list, 
 redirecting all of your blackholed DNS traffic to the host running MalNET.
 
 3. Usage
@@ -25,6 +25,16 @@ Not much to it really;
 sudo python ./malnet.py <port>
 
 <port> defaults to port 80 if none specified
+
+once MalNET has been started, you will see log output to both stderr and a separate log file called 
+malnet.log. The log output will look as follows:
+
+[x] Started MalNET HTTP Server
+[x] Hit Ctrl+C to exit
+hostpc.domain.net [19/Dec/2010 11:34:21] Host: ['some.malwaredomain.com'] "GET / HTTP/1.1" 200 -
+
+^ visiting host     ^ date                         ^malware domain visited  ^ request
+
 
 4. About
 ------------------
