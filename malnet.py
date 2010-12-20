@@ -1,12 +1,15 @@
 #!/opt/local/bin/python
 #
 # MalNET v0.1
-# brainiac3 <brainiac3@evilnerds.net>
+# brainiac3 <brainiac3@evilnerds.net / brainiac3@me.com>
 #
 # Usage:
 # sudo python ./malnet.py <port>
 #
 # <port> defaults to port 80 if none specified
+#
+# Example
+# sudo python ./malnet.py 8080
 #
 
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
